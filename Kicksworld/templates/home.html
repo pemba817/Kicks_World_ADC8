@@ -29,6 +29,9 @@
         <img src="products{{product.product_pic}}" alt="" srcset="">
         {{product.product_name}}
         {{product.product_price}}
+
+        <a href="../products/update_product/{{product.id}}">edit</a>
+        <a href="../products/post_delete/{{product.id}}">delete</a>
     </div>
 {%endfor%}
 </body>
