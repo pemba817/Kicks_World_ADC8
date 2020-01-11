@@ -9,7 +9,8 @@
 <body>
     <h2>Add Products</h2>
 
-    <form action="./post_add_product" method="post">
+    <form action="./post_add_product" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
         <p>Product Image:</p><input type="file" name="product_pic"><br>
         <input type="text" name="product_name" id="" placeholder="Enter Product Name"><br>
         <input type="number" name="product_price" placeholder="Enter Product Price"><br>

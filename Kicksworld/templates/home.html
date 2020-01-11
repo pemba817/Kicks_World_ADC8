@@ -23,8 +23,13 @@
       </nav>
     </div>
 </header>
-<div id="photo">
-    <img src="../static/images/jordan.jpg" alt="photo" id="photo">
-</div>
+
+{%for product in products%}
+    <div>
+        <img src="products{{product.product_pic}}" alt="" srcset="">
+        {{product.product_name}}
+        {{product.product_price}}
+    </div>
+{%endfor%}
 </body>
 </html>
