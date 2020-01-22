@@ -25,13 +25,13 @@
 </header>
 
 {%for product in products%}
-    <div>
-        <img src="products{{product.product_pic}}" height="100" width="100" alt="" srcset="">
+    <div id="product">
+        <img src="products{{product.product_pic}}" height="300" width="300" alt="" srcset="">
         {{product.product_name}}
         {{product.product_price}}
 
-        <a href="../products/update_product/{{product.id}}">edit</a>
-        <a href="../products/post_delete/{{product.id}}">delete</a>
+        <a href="../products/update_product/{{product.id}}"class="btn btn-primary">edit</a>
+        <a href="../products/post_delete/{{product.id}}"class="btn btn-primary">delete</a>
     </div>
 {%endfor%}
 </body>
