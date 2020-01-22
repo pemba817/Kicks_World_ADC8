@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from django.contrib.auth import logout
+
 # Create your views here.
 
 def get_login_page(req):
@@ -12,7 +14,7 @@ def post_login(req):
     password=req.POST["password"]
     user=authenticate(username=username,password=password)
     if user==None:
-        return redirect('management_home')
+        return redirect('home')
     else:
         return redirect('login')
 
@@ -28,3 +30,7 @@ def post_sign_up(req):
     user=User.objects.create_user(username=username,password=password,email=email)
     user.save()
     return redirect("home")
+
+def user_logout(req):
+    logout(req)
+    return redirect('login')
