@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from products.models import Product
 # Create your views here.
 
 def home(request):
+     if not request.user.is_authenticated:
+        return redirect('login')
      all_products=Product.objects.all()
      context={
           "products":all_products
